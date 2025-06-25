@@ -9,15 +9,55 @@
   <title>Rebonatto Engenharia</title>
   <link rel="icon" href="https://img.icons8.com/ios-filled/50/93c5fd/blueprint.png" type="image/png" />
   <style>
+    :root {
+      --azul-escuro: #1e3a8a;
+      --azul-claro: #93c5fd;
+      --fundo-claro: #f9f9f9;
+      --fundo-escuro: #1a1a1a;
+      --texto-claro: #333;
+      --texto-escuro: #f1f1f1;
+      --caixa-sobre: #eef2ff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: var(--fundo-escuro);
+        color: var(--texto-escuro);
+      }
+      header, form {
+        background-color: #111827;
+        color: var(--texto-escuro);
+      }
+      .sobre-box {
+        background-color: #1f2937;
+        color: var(--texto-escuro);
+      }
+      form input, form textarea {
+        background-color: #1f2937;
+        color: white;
+        border-color: #374151;
+      }
+      form button {
+        background-color: #3b82f6;
+      }
+      form button:hover {
+        background-color: #2563eb;
+      }
+      footer {
+        background-color: #111827;
+        color: #ccc;
+      }
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: var(--fundo-claro);
+      color: var(--texto-claro);
     }
 
     header {
-      background-color: #1e3a8a;
+      background-color: var(--azul-escuro);
       color: white;
       padding: 2rem;
       text-align: center;
@@ -25,12 +65,13 @@
 
     .logo {
       font-weight: bold;
-      font-size: 3rem;
-      color: #93c5fd;
+      font-size: 2.5rem;
+      color: var(--azul-claro);
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .logo-icon {
@@ -46,8 +87,8 @@
 
     .logo-icon img.hard-hat {
       position: absolute;
-      top: 8px;
-      left: 8px;
+      top: -8px;
+      left: 14px;
       width: 24px;
       height: 24px;
     }
@@ -59,15 +100,16 @@
     }
 
     section h2 {
-      color: #1e3a8a;
+      color: var(--azul-escuro);
     }
 
     .sobre-box {
-      background-color: #eef2ff;
-      border-left: 6px solid #1e3a8a;
+      background-color: var(--caixa-sobre);
+      border-left: 6px solid var(--azul-escuro);
       padding: 1rem 1.5rem;
       margin-top: 2rem;
       border-radius: 8px;
+      color: var(--texto-claro);
     }
 
     .sobre-box h2 {
@@ -81,14 +123,14 @@
 
     .sobre-box li::before {
       content: "✔ ";
-      color: #1e3a8a;
+      color: var(--azul-escuro);
       font-weight: bold;
     }
 
     .atendimento {
       margin-top: 2rem;
       font-weight: bold;
-      color: #1e3a8a;
+      color: var(--azul-escuro);
       text-align: center;
     }
 
@@ -117,7 +159,7 @@
 
     form button {
       margin-top: 1.5rem;
-      background-color: #1e3a8a;
+      background-color: var(--azul-escuro);
       color: white;
       padding: 0.8rem 1.5rem;
       border: none;
@@ -139,6 +181,7 @@
       color: #555;
     }
 
+    /* WhatsApp Button */
     #whatsapp-button {
       position: fixed;
       bottom: 20px;
@@ -167,6 +210,25 @@
       width: 24px;
       height: 24px;
     }
+
+    @media (max-width: 600px) {
+      .logo {
+        font-size: 1.8rem;
+        flex-direction: column;
+      }
+
+      section {
+        padding: 1rem;
+      }
+
+      form input, form textarea {
+        font-size: 0.95rem;
+      }
+
+      form button {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -174,7 +236,7 @@
     <div class="logo">
       <div class="logo-icon">
         <img class="base" src="https://img.icons8.com/ios-filled/50/93c5fd/blueprint.png" alt="Ícone de planta arquitetônica azul" />
-        <img class="hard-hat" src="https://img.icons8.com/ios-filled/50/ffffff/worker-helmet.png" alt="Capacete de segurança branco" />
+        <img class="hard-hat" src="https://img.icons8.com/ios-filled/50/ffffff/safety-helmet.png" alt="Capacete branco de segurança" />
       </div>
       Rebonatto Engenharia
     </div>
@@ -219,8 +281,9 @@
     &copy; 2025 Rebonatto Engenharia. Todos os direitos reservados.
   </footer>
 
-  <a id="whatsapp-button" href="https://wa.me/5548988293505" target="_blank" rel="noopener">
-    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" />
+  <!-- Botão WhatsApp com mensagem automática -->
+  <a id="whatsapp-button" href="https://wa.me/5548988293505?text=Ol%C3%A1%20Nathan%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20vistoria%20de%20entrega%20de%20im%C3%B3veis" target="_blank">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WhatsApp" />
     Fale conosco
   </a>
 </body>
